@@ -34,6 +34,10 @@ public class Pokemon {
         return type1;
     }
 
+    public String getAbilities(){
+        return abilities;
+    }
+
     
     @Override
     public String toString() {
