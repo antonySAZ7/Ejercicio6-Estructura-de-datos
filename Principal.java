@@ -1,11 +1,11 @@
 import java.util.*;
-
+// esta clase es el main, presenta la funcion del programa
 public class Principal {
 
     public static void main(String[] args){
 
         Scanner scanner = new Scanner(System.in);
-
+        // menu para eligir el tipo de map que se va a usar
         System.out.println("Bienvenido al programa de Pokemones");
         System.out.println("Por seleccione el tipo de mapa que desea utilizar");
         System.out.println("1.- HashMap");
@@ -24,10 +24,14 @@ public class Principal {
         }
 
         Set<Pokemon> pokemonesPropio = new LinkedHashSet<>();
+        // Se usa LinkedHashSet porque:
+        // 1. Evita duplicados automaticamente.
+        // 2. Mantiene el orden de inserción.
+        // 3. La busqueda de elementos es rapida (O(1) en promedio).
 
 
         int contador = 0;
-
+        // menu para elegir entre las 6 opciones
         while (contador == 0){
             System.out.println("Menu de Operaciones:");
             System.out.println("1. Agregar un Pokemon a la coleccion del usuario.");
@@ -40,6 +44,8 @@ public class Principal {
             int opcionMenu = scanner.nextInt();
             scanner.nextLine();
 
+
+            // switch para elegir la opcion
             switch (opcionMenu) {
                 case 1:
                 System.out.print("Ingrese el nombre del Pokemon a agregar: ");
@@ -57,6 +63,8 @@ public class Principal {
                     
                 }
                     break;
+
+                // case para mostrar los datos de un pokemon
                 case 2: 
                 System.out.print("Ingrese el nombre del pokemon que quiera ver: ");
                 String buscarPokemon = scanner.nextLine();  
@@ -66,7 +74,7 @@ public class Principal {
                     System.out.println("   Datos del pokemon: ");
                     System.out.println(pokemontipoMap.get(buscarPokemon));}
                     break;
-                
+                // case para mostrar los pokemones del usuario
                 case 3:
                 if(pokemonesPropio.isEmpty()){
                     System.out.println("No hay Pokemones en la coleccion del usuario.");
@@ -79,8 +87,13 @@ public class Principal {
                     }
                 }                    
                     break;
-
+                // case para mostrar todos los pokemones
                 case 4:
+                // Complejidad de esta operacion:
+                // 1. Obtener los valores del Map → O(n)
+                // 2. Convertir a lista → O(n)
+                // 3. Ordenar con Collections.sort() (TimSort) → O(n log n)
+                // TOTAL: O(n log n)
                 List<Pokemon> listaCompleta = new ArrayList<>(pokemontipoMap.values());
                 listaCompleta.sort(Comparator.comparing(Pokemon::getType1));
                 System.out.println("Esta es la lista completa de pokemones ordenada por el tipo 1: ");
@@ -89,7 +102,7 @@ public class Principal {
                 }
                 
                     break;
-
+                // case para buscar por habilidad
                 case 5: 
                 System.out.print("Ingrese la habilidad que desea buscar: ");
                 String habilidad = scanner.nextLine();
@@ -105,7 +118,7 @@ public class Principal {
                     System.out.println("No se encontro ningun pokemon con esta habilidad: " + habilidad);
                 }
                     break;
-                
+                // salir del programa
                 case 6:
                     contador++;
                     System.out.println("Gracias por usar el programa, byeeeee.");

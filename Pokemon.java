@@ -1,13 +1,16 @@
+// esta clase es el modelo de el objeto de un pokemon, esto represa los atributos que tiene un pokemon
+
+
 public class Pokemon {
     private String name;
     private String pokedexNumber;
     private String type1;
     private String type2;
     private String classification;
-    private String height;       // Se almacena como String
-    private String weight;       // Se almacena como String
+    private String height;       
+    private String weight;       
     private String abilities;
-    private String generation;   // Se almacena como String
+    private String generation;   
     private String legendaryStatus;
 
     public Pokemon(String name, String pokedexNumber, String type1, String type2,

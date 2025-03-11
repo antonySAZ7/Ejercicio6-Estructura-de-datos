@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.*;
-
+// Esta clase es para hacer pruebas unitarias
 public class PrincipalTest {
 
     @Test

@@ -3,6 +3,7 @@
 import java.io.*;
 import java.util.*;
 
+// Esta clase maneja la logica de la lectura el archivo csv
 public class ManejoCSV{
 
     public List<Pokemon> leerPokemones(String archivo){

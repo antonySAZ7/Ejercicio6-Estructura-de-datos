@@ -1,5 +1,7 @@
 import java.util.*;
 
+
+// esta clase represta el factory en map, se encarga de crear el mapa segun la opcion que se le pase
 public class MapFactory {
 
 
